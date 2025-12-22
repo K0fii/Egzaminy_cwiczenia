@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MabilkiMobilki.MainPage">
+
+    <VerticalStackLayout Spacing="15">
+        <Label Text="Moja Lista Zadań" FontSize="30" HorizontalOptions="Center"/>
+        <HorizontalStackLayout HorizontalOptions="Center" >
+            <Entry x:Name="entNoweZadania" Placeholder="Wpisz zadanie" WidthRequest="250"/>
+            <Button Clicked="DodajZadanie" Text="Dodaj"/>
+        </HorizontalStackLayout>
+        <CollectionView x:Name="listaZadan">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5">
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding .}" HorizontalOptions="Start"/>
+                        <Button Clicked="UsunZadanie" Text="X" BackgroundColor="Red"
+                            CommandParameter="{Binding .}" HorizontalOptions="End"/>
+                    </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
