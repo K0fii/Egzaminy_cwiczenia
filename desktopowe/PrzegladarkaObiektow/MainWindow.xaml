@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrzegladarkaObiektow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="550" Width="450" FontSize="18">
+    <StackPanel>
+        <Button Click="wczytajDane" Content="Wczytaj dane" Width="140" Height="50" Margin="10"/>
+        <Image x:Name="imgPracownik" Source="/img/1-foto.jpg" Margin="10"/>
+        <Label x:Name="lbImie" Content="Pracownik:" HorizontalAlignment="Center"/>
+        <Label x:Name="lbZawod" Content="Zawód:" HorizontalAlignment="Center"/>
+        <Label x:Name="lbPlaca" Content="Płaca:" Foreground="Green" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Click="poprzedniPracownik" Content="Poprzedni" Margin="5" Width="100" Height="50"/>
+            <Button Click="nastepnyPracownik" Content="Następny" Margin="5" Width="100" Height="50"/>
+        </StackPanel>
+    </StackPanel>
 </Window>
