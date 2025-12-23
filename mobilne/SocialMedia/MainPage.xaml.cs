@@ -32,10 +32,7 @@
 
         private void pokazUkryjOpis(object sender, TappedEventArgs e)
         {
-            if(DescriptionLabel.IsVisible)
-                DescriptionLabel.IsVisible = false;
-            else
-                DescriptionLabel.IsVisible = true;
+            DescriptionLabel.IsVisible = !DescriptionLabel.IsVisible;
         }
     }
 
