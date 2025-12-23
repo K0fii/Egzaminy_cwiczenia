@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocialMedia.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" HorizontalOptions="Center">
+
+            <Label Text="Gesty w MAUI" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Frame x:Name="ImageFrame" BorderColor="Gray" Padding="5" CornerRadius="10">
+                <Image Source="dotnet_bot.png" WidthRequest="200" HeightRequest="200">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="zaznaczZdjecie" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Tapped="polubZdjecie" NumberOfTapsRequired="2"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+
+            <Label x:Name="LikesLabel" Text="Polubienia: 0" FontSize="20" HorizontalOptions="Center" />
+
+            <BoxView HeightRequest="1" Color="Silver" />
+
+            <Label Text="Pokaż/Ukryj opis szczegółowy" 
+                   TextColor="Blue" 
+                   TextDecorations="Underline" 
+                   HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="pokazUkryjOpis" NumberOfTapsRequired="1"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label x:Name="DescriptionLabel" 
+                   Text="To jest zaawansowany opis zdjęcia, który pojawia się po użyciu GestureRecognizer na zwykłym tekście."
+                   IsVisible="False" 
+                   HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
